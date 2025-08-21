@@ -1,0 +1,64 @@
+{
+  "name": "ClaudeCode Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "TZ": "${localEnv:TZ:Asia/Tokyo}"
+    },
+    "context": "."
+  },
+  "remoteUser": "user",
+  "updateRemoteUserUID": true,
+  "postCreateCommand": "/workspaces/claude-code/.devcontainer/postCreateCommand.sh",
+  "runArgs": ["--gpus", "\"device=1\"", "--shm-size", "96gb"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-azuretools.vscode-docker",
+        "gxl.git-graph-3",
+        "codezombiech.gitignore",
+        "coolcline.coolcline",
+        "ms-python.black-formatter",
+        "shd101wyy.markdown-preview-enhanced"
+      ],
+      "settings": {
+        "editor.formatOnSave": true
+        // "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // "editor.codeActionsOnSave": {
+        // "source.fixAll.eslint": "explicit"
+        // },
+        // "terminal.integrated.defaultProfile.linux": "zsh",
+        // "terminal.integrated.profiles.linux": {
+        //   "bash": {
+        //     "path": "bash",
+        //     "icon": "terminal-bash"
+        //   },
+        //   "zsh": {
+        //     "path": "zsh"
+        //   }
+        // }
+      }
+    }
+  },
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
+    //"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  //"forwardPorts": [8080, 3000, 8000]
+  "appPort": ["8000:8000", "8080:8080"],
+  "containerEnv": {
+    "HTTP_PROXY": "http://proxy11.omu.ac.jp:8080",
+    "HTTPS_PROXY": "http://proxy11.omu.ac.jp:8080",
+    "NO_PROXY": "localhost,127.0.0.0/8"
+  }
+
+  //"postCreateCommand": "/home/user/workspace/changebash.sh"
+}

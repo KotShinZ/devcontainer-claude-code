@@ -1,0 +1,95 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(pwd:*)",
+      "Bash(cd:*)",
+      "Bash(mkdir:*)",
+
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(python:*)",
+      "Bash(make:*)",
+
+      "Bash(jq:*)",
+      "Bash(curl:*)",
+      "Bash(echo:*)",
+
+      "Bash(vercel:*)",
+      "Bash(gh:*)",
+      "Bash(pkill:*)",
+      "Bash(npm:*)",
+      "Bash(timeout:*)",
+      "Bash(**:*)",
+      "Bash(**)",
+      "Bash(*)",
+
+      "Write(**)",
+      "Write(**:*)",
+      "Write(*)",
+      "Edit(**)",
+      "Edit(**:*)",
+      "Edit(*)",
+
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:developer.mozilla.org)",
+      "WebFetch(domain:npmjs.com)",
+      "WebFetch(domain:nextjs.org)",
+
+      "NotebookRead(**)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(mv:*)",
+      "Read(.env.*)",
+      "Read(id_rsa)",
+      "Read(id_ed25519)",
+      "Read(**/*token*)",
+      "Read(**/*key*)",
+      "Write(.env*)",
+      "Write(**/secrets/**)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(nc:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm remove:*)",
+      "Bash(psql:*)",
+      "Bash(mysql:*)",
+      "Bash(mongod:*)",
+      "mcp__supabase__execute_sql",
+      "chmod(**)",
+      "Write(.env*)",
+      "Write(gitignore:*)",
+      "Edit(.gitignore)"
+    ]
+  },
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-puppeteer"]
+    }
+  },
+  "toolPermissions": {
+    "mcp__puppeteer": "allow",
+    "mcp__puppeteer__puppeteer_navigate": "allow",
+    "mcp__puppeteer__puppeteer_screenshot": "allow",
+    "mcp__puppeteer__puppeteer_click": "allow",
+    "mcp__puppeteer__puppeteer_type": "allow",
+    "mcp__puppeteer__puppeteer_evaluate": "allow"
+  }
+}
